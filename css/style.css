@@ -1,0 +1,140 @@
+:root {
+    --purple: #72005F;
+    --beige: #BAA193;
+    --input-linear: linear-gradient(180deg,  #6abaf9, #1866b9);
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background: var(--input-linear);
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.goat-container {
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wg-title {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.wg-button {
+    background-color: var(--purple);
+    padding: 10px;
+    border-color: var(--purple);
+    border-radius: 12px;
+    color: white;
+    z-index: 1;
+    width: 280px;
+    font-weight: bold;
+}
+
+.wg-button:hover {
+    background-color: transparent;
+    color: var(--purple);
+    border: 2px solid var(--purple);
+}
+
+.wg-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.clouds {
+    z-index: -1;
+}
+
+.wg-img .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.wg-img .clouds img {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: animate calc(3s * var(--i)) linear infinite;
+}
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+.wise {
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: -20px;
+}
+
+.goat {
+    color: var(--purple);
+    font-size: 130px;
+    font-weight: 600;
+}
+
+.goatie {
+    height: 350px;
+    width: auto;
+    object-fit: cover;
+    animation: float 4s ease-out infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(25px);
+    }
+}
+
+.wg-shadow {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    top: 55%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    filter: blur(6px);
+    animation: shrink 4s ease-out infinite;
+}
+
+@keyframes shrink {
+    0% {
+        width: 10%
+    };
+    25% {
+        width: 15%
+    };
+    50% {
+        width: 30%
+    };
+    75% {
+        width: 15%
+    };
+    100% {
+        width: 10%
+    };
+}
