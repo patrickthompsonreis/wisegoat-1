@@ -138,3 +138,16 @@ body {
         width: 10%
     };
 }
+
+.advice-img {
+    width: 300px;
+    height: auto;
+}
+
+.advice-quote {
+    font-size: 22px;
+}
+
+.advice-author {
+    font-size: 18px;
+}

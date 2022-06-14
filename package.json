@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "wise goat project",
   "main": "wg-script.js",
+  "type" : "module",
   "scripts": {
     "test": "npm run"
   },
