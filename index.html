@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Wise Goat - Ask for advise</title>
 
     <link rel="stylesheet" href="css/reset.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-          rel="stylesheet" 
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-          crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+    </script>
+
+    <!-- <script defer type="module" src="wg-script.js"></script> -->
+    <script src="/index.js"></script>
 </head>
+
 <body>
     <main>
         <div class="container">
@@ -28,11 +32,15 @@
                 <div class="col-lg-6 wg-title">
                     <h1 class="wise">Wise</h1>
                     <h1 class="goat">Goat</h1>
-                    <a class="btn btn-outline-info wg-button" href="./advice.html">
-                        Ask for advise
+                    <a id="advice-button" 
+                    class="btn btn-outline-info wg-button" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#adviceModal"
+                    onclick="generateQuotes()">
+                        Ask for advice
                     </a>
                 </div>
-                
+
                 <div class="col-lg-6 wg-img">
                     <img src="assets/bodezinho.png" alt="wise goat" class="goatie">
                     <!-- <span class="wg-shadow"></span> -->
@@ -52,6 +60,38 @@
             </div>
         </div>
     </main>
-    <script src="wg-script.js"></script>
+
+    <!-- #region Modal -->
+    <div class="modal fade" id="adviceModal" tabindex="-1" aria-labelledby="adviceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adviceModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- <img src="./assets/bodezinho.png" alt="wise goat" class="advice-img"> -->
+                    <span id="advice-quote" class="advice-quote"></span>
+                    <span id="advice-author" class="advice-author"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Share this!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion -->
+
+
+    <script>
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+    </script>
 </body>
+
 </html>
