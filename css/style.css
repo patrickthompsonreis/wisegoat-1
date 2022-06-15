@@ -146,8 +146,13 @@ body {
 
 .advice-quote {
     font-size: 22px;
+    font-style: italic;
+    color: var(--purple);
+    margin-bottom: 5px;
 }
 
 .advice-author {
     font-size: 18px;
+    font-style: italic;
+    color: var(--beige);
 }

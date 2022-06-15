@@ -66,24 +66,30 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="adviceModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="adviceModalLabel">Your piece of wisdom</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- <img src="./assets/bodezinho.png" alt="wise goat" class="advice-img"> -->
+                    <!-- <img src="https://www.randomgoat.com//200/200" alt="wise goat" class="advice-img"> -->
+                    <iframe src='//randomgoat.com/embed.php' 
+                    width='480' 
+                    height='360' 
+                    frameBorder='0' 
+                    id='random-goat-embed' 
+                    allowFullScreen></iframe>
                     <span id="advice-quote" class="advice-quote"></span>
+                    <br>
                     <span id="advice-author" class="advice-author"></span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                     <button type="button" class="btn btn-primary">Share this!</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- #endregion -->
-
-
+    
     <script>
         var myModal = document.getElementById('myModal')
         var myInput = document.getElementById('myInput')

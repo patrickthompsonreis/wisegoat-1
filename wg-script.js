@@ -17,3 +17,7 @@
 //     console.log(quotes[randomId].quote)
 //     console.log(quotes[randomId].author)
 // })
+
+fetch('./quotes.json')
+    .then(res => res.json())
+    .then(data => console.log(data))
